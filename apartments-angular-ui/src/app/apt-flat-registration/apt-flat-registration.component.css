@@ -1,0 +1,39 @@
+
+fieldset {
+    border: thin solid #ccc; 
+    border-radius: 4px;
+    padding: 20px;
+    padding-left: 40px;
+    background: #fbfbfb;
+}
+legend {
+   color: #678;
+}
+.form-control {
+    width: 30%;
+}
+label small {
+    color: #678 !important;
+}
+label {
+	width: 240px;
+	display: inline-block
+}
+span.req {
+    color:maroon;
+    font-size: 112%;
+}
+
+
+.center {
+    text-align: center;
+    color: rgb(198, 235, 33);
+  }
+  .admin {
+    text-align: left;
+    color: rgb(198, 235, 33);
+  }
+
+  td {
+    text-align: center;
+  }

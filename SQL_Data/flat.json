@@ -1,0 +1,4 @@
+[{"id":6, "unit":"B2-12", "configuration":"2-BHK", "currentstatus":"Sold", "apartment":"Magical Gardens"},
+ {"id":7, "unit":"D-15", "configuration":"3-BHK", "currentstatus":"Sold", "apartment":"Novelty Apartments"},
+ {"id":9, "unit":"A3-04", "configuration":"1-BHK", "currentstatus":"Available", "apartment":"Nodal Society"},
+ {"id":12, "unit":"B3-25", "configuration":"2-BHK", "currentstatus":"Rented", "apartment":"The Greens"}]

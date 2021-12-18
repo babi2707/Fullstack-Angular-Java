@@ -1,0 +1,48 @@
+<div style="background: url(https://i.postimg.cc/3N7wnb75/background.jpg)"  class="jumbotron bg-cover text-white">
+    <div class="container py-5 text-center">
+        <h1 class="center" >USER'S PAGE</h1>
+		<h2 class="admin">User</h2>
+	</div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div id="custom-search-input">
+            <div class="input-group col-md-12" style="text-align: center">
+                <input type="text" class="search-query form-control" placeholder="Search With Flat configuration in format eg.,2-BHK "  name="configuration" [(ngModel)]="configuration"/>
+                <span class="input-group-btn">
+                    <button class="btn btn-danger" type="button" style="color:rgb(223, 76, 76);" (click)="findFlatsByConfig()">
+                        <span class=" glyphicon glyphicon-search"></span>
+                    </button>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+<div class="container">
+    <div class="row col-md-6 col-md-offset-2 custyle">
+        <table class="table table-striped custab" style="width:50%">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Unit</th>
+                    <th>Configuration</th>
+                    <th>Current Status</th>
+                    <th>Apartment</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let flat of flats">
+                    <td>{{flat.id}}</td>
+                    <td>{{flat.unit}}</td>
+                    <td>{{flat.configuration}}</td> 
+                    <td>{{flat.currentstatus}}</td>
+                    <td>{{flat.apartment}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
+
