@@ -1,0 +1,17 @@
+Steps to run this application:
+
+1. apartment-admin-service (springboot microservice): Open this in STS
+2. apartments-angular-ui (angular project): open this in Visual Studio
+
+3. SQL_Data: Open DDL file in Notepad, copy all statements and execute in mysql.
+   This will create Database, tables and sample data
+
+4. Run apartment-admin-service application as springboot project
+   test application with hitting url "http://localhost:8083/flats/list" in browser
+
+5. Under apartments-angular-ui project in Visual Studio, run following commands:
+	a)  npm install
+	b)  ng serve
+
+hit http://localhost:4200/ in browser
+

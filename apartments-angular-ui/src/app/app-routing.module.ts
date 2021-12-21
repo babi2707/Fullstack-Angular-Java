@@ -4,6 +4,7 @@ import { AptFlatRegistrationComponent } from './apt-flat-registration/apt-flat-r
 import { UserActionComponent } from './user-action/user-action.component';
 
 const routes: Routes = [
+  {path:"",redirectTo:"register",pathMatch:"full"},
   {path:"register",component:AptFlatRegistrationComponent},
   {path:"search",component:UserActionComponent}
 ];
