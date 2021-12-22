@@ -23,7 +23,7 @@
 							Id:  
 						</label>
                         <input required type="text" [(ngModel)]="flat.id" name="id" id="id"
-                            class="form-control" maxlength="28" placeholder="Eter Id: Optional, but mandatory field to Update a Flat record" />
+                            class="form-control" maxlength="28" placeholder="Enter Id: Optional, but mandatory field to Update a Flat record" />
                     </div>
 					
 					<div class="form-group">
@@ -67,7 +67,7 @@
                     </div>
 
                     <div class="form-group">
-                        <input class="btn btn-success" type="submit" name="submit_reg" value="Register" (click)="registerFlat()">
+                        <input style="margin-right: 2px" class="btn btn-success" type="submit" name="submit_reg" value="Register" (click)="registerFlat(flat)">
 						<input class="btn btn-success" type="submit" name="submit_upd" value="Update" (click)="updateFlatRecord(flat)">
                     </div>
 					

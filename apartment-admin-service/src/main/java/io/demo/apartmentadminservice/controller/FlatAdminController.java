@@ -43,7 +43,7 @@ public class FlatAdminController {
 	}
 	
 	@RequestMapping(value="/update", method = RequestMethod.PUT, consumes="application/json", produces = "application/json")
-    public Iterable<Flat> updateFlat(@RequestBody Flat flat) {
+    public Iterable<Flat> updateFlat(@RequestBody Flat flat) throws InterruptedException {
 		Optional<Flat> fl = flatAdminService.findById(flat.getId());
 		Flat updatedFlat = fl.get();
 		updatedFlat.setApartment(flat.getApartment());
@@ -52,6 +52,7 @@ public class FlatAdminController {
 		updatedFlat.setUnit(flat.getUnit());
 		
 		flatAdminService.save(updatedFlat);
+		Thread.sleep(100);
 		return flatAdminService.findAll();	
 	}
 	

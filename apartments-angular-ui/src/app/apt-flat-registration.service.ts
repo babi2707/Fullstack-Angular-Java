@@ -9,7 +9,7 @@ export class AptFlatRegistrationService {
   constructor(private http:HttpClient) { }
 
   public newFlatRegistration(flat:any){
-    return this.http.post("http://localhost:8083/flats/add", {responseType: 'json' as 'json'});
+    return this.http.post("http://localhost:8083/flats/add",flat, {responseType: 'json' as 'json'});
   }
   public getAllFlats(){
     return this.http.get("http://localhost:8083/flats/list",{responseType: 'json' as 'json'});

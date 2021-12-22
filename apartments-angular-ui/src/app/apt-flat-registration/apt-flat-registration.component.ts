@@ -20,19 +20,22 @@ export class AptFlatRegistrationComponent implements OnInit {
     response.subscribe((data) => this.flats=data);
   }
 
-  public registerFlat(){
+  public registerFlat(flat:any){
     let response = this.service.newFlatRegistration(this.flat);
     response.subscribe((data) => this.flats=data);
-    this.responsemessage = "Flats added / updated successfully"
+    this.responsemessage = "Flat added successfully";
+    
   }
 
   public removeFlatRecord(id:number){
     let resp= this.service.removeFlat(id);
     resp.subscribe((data)=>this.flats=data);
+    this.responsemessage = "Flat record removed successfully";
   }
 
   public updateFlatRecord(flat:any){
     let resp= this.service.updateFlatInfo(flat);
     resp.subscribe((data)=>this.flats=data);
+    this.responsemessage = "Flat updated successfully";
    }
 }

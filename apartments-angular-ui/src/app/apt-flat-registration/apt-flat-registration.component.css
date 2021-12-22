@@ -12,6 +12,9 @@ legend {
 .form-control {
     width: 30%;
 }
+.btn {
+  background: rgb(224, 157, 245);
+}
 label small {
     color: #678 !important;
 }
