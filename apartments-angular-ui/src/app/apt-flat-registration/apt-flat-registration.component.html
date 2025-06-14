@@ -8,7 +8,7 @@
 <div class="container">
 	<div class="row">
 		<div class="com-md-6">
-			<form>
+			<form #flatForm="ngForm">
 				<fieldset>
 				
 					<legend class="text-center"> Valid information is required to register.
@@ -31,16 +31,21 @@
 							<span class="req">* </span>
 							Unit:  
 						</label>
-                        <input required type="text" [(ngModel)]="flat.unit" name="unit" id="unit"
-                            class="form-control" maxlength="28" placeholder="Enter flat number" />
+						<input required type="text" [(ngModel)]="flat.unit" name="unit" id="unit" class="form-control" maxlength="28"
+							placeholder="Enter flat number" #unit="ngModel" />
+						<small *ngIf="unit.invalid && unit.touched" id="error">Unit is required</small>
                     </div>
 					
 					<div class="form-group">
                         <label for="firstname"><span class="req">* </span> Configuration: </label>
                         <input class="form-control" type="text" [(ngModel)]="flat.configuration" name="configuration" id="txt" required
-                            placeholder="Enter flat configuration type" />
+                            placeholder="Enter flat configuration type" #configuration="ngModel" />
 							&nbsp;
-						<small>Flat configuration type eg., 2-BHK</small>
+							<small *ngIf="configuration.invalid && configuration.touched; else configurationMessage" id="error">Current status is
+								required</small>
+							<ng-template #configurationMessage>
+								<small>Flat configuration type eg., 2-BHK</small>
+							</ng-template>
                         <div id="errFirst"></div>						
                     </div>
 
@@ -49,9 +54,12 @@
 							<span class="req">* </span> Current Status : 
 						</label>
                         <input class="form-control" type="text" [(ngModel)]="flat.currentstatus" name="currentstatus" id="txt"
-                            placeholder="Enter flat occupancy status" required />
+                            placeholder="Enter flat occupancy status" required #currentstatus="ngModel" />
 							&nbsp;
-						<small> Flat occupancy status eg., available, rented</small>
+							<small *ngIf="currentstatus.invalid && currentstatus.touched; else currentstatusMessage" id="error">Current status is required</small>
+						<ng-template #currentstatusMessage>
+							<small> Flat occupancy status eg., available, rented</small>
+						</ng-template>
                         <div id="errLast"></div>
                     </div>
 					
@@ -60,15 +68,18 @@
 							<span class="req">* </span> Apartment : 
 						</label>
                         <input class="form-control" type="text" [(ngModel)]="flat.apartment" name="apartment" id="txt"
-                            placeholder="Enter apartment name" required />
+                            placeholder="Enter apartment name" required #apartment="ngModel" />
 							&nbsp;
-						<small>Apartment name</small>
+						<small *ngIf="apartment.invalid && apartment.touched; else apartmentMessage" id="error">Apartment name is required</small>
+						<ng-template #apartmentMessage>
+							<small>Apartment name</small>
+						</ng-template>
                         <div id="errLast"></div>
                     </div>
 
                     <div class="form-group">
-                        <input style="margin-right: 2px" class="btn btn-success" type="submit" name="submit_reg" value="Register" (click)="registerFlat(flat)">
-						<input class="btn btn-success" type="submit" name="submit_upd" value="Update" (click)="updateFlatRecord(flat)">
+                        <input style="margin-right: 2px" class="btn btn-success" type="submit" name="submit_reg" value="Register" (click)="registerFlat(flat)" [disabled]="flatForm.invalid">
+						<input class="btn btn-success" type="submit" name="submit_upd" value="Update" (click)="updateFlatRecord(flat)" [disabled]="flatForm.invalid">
                     </div>
 					
 				</fieldset>

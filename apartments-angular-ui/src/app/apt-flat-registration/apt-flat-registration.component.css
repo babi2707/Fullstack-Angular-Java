@@ -40,3 +40,8 @@ span.req {
   td {
     text-align: center;
   }
+
+
+#error{
+  color: red;
+}
