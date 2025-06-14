@@ -12,6 +12,7 @@ export class AptFlatRegistrationComponent implements OnInit {
   message:any;
   flats:any;
   responsemessage:any;
+  searchTerm: string = '';
 
   constructor(private service:AptFlatRegistrationService) { }
 

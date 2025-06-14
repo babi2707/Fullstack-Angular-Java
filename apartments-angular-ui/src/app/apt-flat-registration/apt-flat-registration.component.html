@@ -93,6 +93,9 @@
 		</div-->
 		<div class="container">
 			<div class="row col-md-6 col-md-offset-2 custyle">
+				<div class="form-group">
+					<input type="text" class="form-control" [(ngModel)]="searchTerm" placeholder="Search">
+				</div>
 				<table class="table table-striped custab" style="width:50%">
 					<thead>
 						<tr>
@@ -105,7 +108,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr *ngFor="let flat of flats">
+						<tr *ngFor="let flat of flats | filterFlats:searchTerm">
 							<td>{{flat.id}}</td>
 							<td>{{flat.unit}}</td>
 							<td>{{flat.configuration}}</td> 

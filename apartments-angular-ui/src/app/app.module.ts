@@ -11,12 +11,14 @@ import { AptFlatRegistrationService } from './apt-flat-registration.service';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { FilterFlatsPipe } from './filter-flats.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserActionComponent,
-    AptFlatRegistrationComponent
+    AptFlatRegistrationComponent,
+    FilterFlatsPipe
   ],
   imports: [
     BrowserModule,
